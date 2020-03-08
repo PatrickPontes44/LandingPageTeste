@@ -1,0 +1,212 @@
+:root{
+    --logoColor: #F44336;
+    --ctaColor: #9C27B0;
+    --ctaBright: rgb(184, 55, 207);
+    --overlayColor: rgba(167, 215, 255, 0.2);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    font-size: 100%;
+    font-family: Roboto, sans-serif;
+    font-weight: lighter;
+}
+
+header{
+    width: 100%;
+    height: 10%;
+    background-color: #fff;
+}
+header nav{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100%;
+    align-items: center;
+    padding: 0px 1.5em;
+}
+header nav h1{
+    color: var(--logoColor);
+    justify-self: flex-start;
+}
+
+header nav ul{
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-self: center;
+}
+nav ul li{
+    margin: 0px 2em;
+    font-size: 1.4em;
+    transition: color .3s ease-in-out;
+}
+nav ul li:hover{
+    color: var(--logoColor);
+}
+
+nav .icon-container{
+    justify-self: flex-end;
+    display: flex;
+    overflow: hidden;
+    width: 35px;
+    transition: width .5s ease-in-out;
+    
+}
+nav .icon-container:hover{
+    width: 210px;
+}
+nav .icon-container i{
+    margin-left: 10px;
+    font-size: 1.8em;
+}
+nav .icon-container i:hover{
+    color: var(--ctaColor);
+}
+nav .icon-container input{
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid black;
+    text-indent: 5px;
+}
+
+main{
+    width: 100%;
+    height: 90%;
+    background-image: url("static/main-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+main .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(217,99,160,1);
+    background: -moz-linear-gradient(top, rgba(217,99,160,0.5) 0%, rgba(217,99,160,0.6) 5%, rgba(234,31,139,0.1) 100%);
+    background: -webkit-linear-gradient(top, rgba(217,99,160,0.5) 0%, rgba(217,99,160,0.6) 5%, rgba(234,31,139,0.1) 100%);
+    background: -o-linear-gradient(top, rgba(217,99,160,0.5) 0%, rgba(217,99,160,0.6) 5%, rgba(234,31,139,0.1) 100%);
+    background: -ms-linear-gradient(top, rgba(217,99,160,1) 0%, rgba(217,99,160,0.6) 5%, rgba(234,31,139,0.1) 100%);
+    background: linear-gradient(to bottom, rgba(217,99,160,0.5) 0%, rgba(217,99,160,0.6) 5%, rgba(234,31,139,0.1) 100%);
+    transition: background-color .4s ease-in-out;
+}
+
+main .overlay:hover{
+    background-color: rgba(36, 153, 168, 0.25);
+}
+
+main .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50% 50%;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.content h1{
+    font-size: 4em;
+    align-self: center;
+
+
+}
+
+.content .cta{
+    align-self: flex-start;
+}
+
+.content .cta h2{
+    font-size: 2.2em;
+    color: rgb(20, 20, 20);
+}
+.content .cta button{
+    color: #fff;
+    width: 250px;
+    height: 80px;
+    background-color: var(--ctaColor);
+    border: none;
+    font-size: 2em;
+    transition: background-color .4s ease-in-out;
+}
+.content .cta button:hover{
+    background-color: var(--ctaBright);
+}
+
+section{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cards-container{
+    width: 95%;
+    height: 80%;
+    background-color: rgb(245, 188, 255);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    width: 30%;
+    height: 80%;
+    background-color: rgba(139, 24, 160, 0.801);
+    margin: 1em;
+    border-radius: 10px;
+    box-shadow: -1px 1px 5px 1px rgba(0, 0, 0, 0.404);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    transition: transform .4s ease-in-out,
+    background-color .4s ease-in-out;
+}
+.card h2{
+    font-size: 2.8em;
+    color: #fff;
+    margin: 0;
+}
+.card h3{
+    font-size: 2.4em;
+    color: rgb(255, 255, 82);
+}
+
+.card p{
+    font-size: 1.5em;
+    color: rgb(24, 24, 24);
+}
+
+.card:hover{
+    transform: scale(1.05, 1.05);
+    background-color: rgba(142, 40, 160, 0.801);
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+footer .github a{
+    display: flex;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: var(--logoColor);
+    transition: transform .4s ease-in-out;
+}
+footer .github a:hover{
+    transform: scale(1.05, 1.05);
+}
